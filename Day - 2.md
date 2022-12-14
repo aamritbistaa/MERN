@@ -12,6 +12,7 @@ const alpha=(a) =>
 }
 alpha('Amrit Bista')
 ```
+
 ## Arrow Function
 ```js
 const square =(a) => console.log(a*a)
