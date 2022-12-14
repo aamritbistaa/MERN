@@ -17,7 +17,6 @@ alpha('Amrit Bista')
 ```js
 const square =(a) => console.log(a*a)
 square(5)
-
 function name(a)
 {
     console.log(`Hello ${a}` );
