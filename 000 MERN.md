@@ -4,3 +4,5 @@
 [[Day - 4]] - Import-Export, Array(Push,Pop,Shift,Unshift)
 [[Day - 5]] -  Conditional Statement
 [[Day - 6]] - Object
+[[Day - 7]] - Spread / Rest operator
+[[Day - 8]] - Callbackfunction / promise / async await
