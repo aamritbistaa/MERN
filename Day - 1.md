@@ -27,13 +27,13 @@ SpiderMmonkey
 	console.log(luckyNum); //undefined
 	luckyNum = 'twenty-four'; //string
 	luckyNum = 5; //int
-	
 ```
 6. Big int - 
+
 ```js
 const alsoHuge = BigInt(9007199254740991)
 ```
-8. Symbol - Its value is kept private and for internal use.
+7. Symbol - Its value is kept private and for internal use.
 ```js
 const NAME = Symbol()
 const person = {
@@ -70,7 +70,7 @@ console.log(c)
 - Not with special character , symbol
 - Not specific keyword like let, return
  
-## Tertiary operator
+## Ternary operator
 ```js
 var a = true
 !a ? true : false
