@@ -191,9 +191,19 @@ const Call =()=>{
     });
 };
 const AsyncPractice = async ()=>{
-    const t = await axios.get("https://www.boredapi.com/api/activity");
-    console.log(t);
+    try{
+        const t = await axios.get("https://www.boredapi.com/api/activity");
+        const {status,statusText,config,validateStatus} = t
+        // console.log(t);
+        console.log(status);
+        console.log(statusText);
+        console.log(config);
+        console.log(validateStatus);
+    }catch(err){
+        console.log(err);
+    }
 }
 Call()
 AsyncPractice()
+// export default Call;
 ```
