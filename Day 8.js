@@ -4,6 +4,7 @@
 // line by line execution -> synchronous
 //synchronous - line by line execution
 /*
+
 function register()
 {
     console.log('register')
@@ -87,8 +88,12 @@ function login(){
     },1000);
 }
 
-
+register(function(){
+    login()
+});
 */
+
+
 
 //Promise
 /*
@@ -178,19 +183,20 @@ const call = async ()=>{
    await hello()
    await ask()
 }
-// async function call()
-// {
-//     await hello()
-//     await ask()
-// }
+async function call()
+ {
+     await hello()
+     await ask()
+ }
 call()
 */
 
 //Example
+
 import axios from "axios";
 const Call =()=>{
     axios
-    .get("https://www.boredapi.com/api/activitys")
+    .get("https://www.boredapi.com/api/activity")
     .then((response) =>{
         console.log(response.data);
     })
@@ -198,11 +204,25 @@ const Call =()=>{
         console.log(err);
     });
 };
-// console.log("abcd0")
 const AsyncPractice = async ()=>{
-    const t = await axios.get("https://www.boredapi.com/api/activity");
-    console.log(t);
+    try{
+        const t = await axios.get("https://www.boredapi.com/api/activity");
+        // const {status,statusText,config="ram",validateStatus,data} = t
+        const {status} =t
+        console.log(status)
+        // const {key} = data
+        // console.log(t);
+        // console.log(status);
+        // console.log(statusText);
+        // console.log(config);
+        // console.log(validateStatus);
+        // console.log(activity)
+        // console.log(data)
+        // console.log(key)
+    }catch(error){
+        console.log(error);
+    }
 }
-// Call()
+Call()
 AsyncPractice()
 // export default Call;
