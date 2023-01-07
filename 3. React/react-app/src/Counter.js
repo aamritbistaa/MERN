@@ -26,6 +26,7 @@ const Counter = () => {
     alert("test");
   }, []);
 
+  /*
   const handleOnIncrement = () => {
     // alert('Increment')
     if (value < 100) {
@@ -38,15 +39,33 @@ const Counter = () => {
     }
     //alert('Decrement')
   };
+  */
+
+  const handleOnClick = (opr) => {
+    if (opr === "+") {
+      if (value < 100) {
+        setValue(value + 1);
+        alert("increse");
+      }
+    } else if (opr === "-") {
+      if (value > 0) {
+        setValue(value - 1);
+        alert("decrese");
+      }
+    } else {
+      console.alter("invalid operation");
+    }
+  };
   return (
     <div>
       This is counter <br />
       Value = {value}
       <br />
-      <button onClick={handleOnIncrement}>Increment</button>
+      <button onClick={() => handleOnClick("+")}>Increment</button>
       {/* <button onClick={handleOnIncrement()}>Increment</button> */}
-      {/* direct call the function */}
-      <button onClick={handleOnDecrement}>Decrement</button>
+      {/* <button onClick={handleOnDecrement()}>Decrement</button> */}
+      {/* direct call the function goes to infinite loop*/}
+      <button onClick={() => handleOnClick("-")}>Decrement</button>
     </div>
   );
 };
