@@ -26,6 +26,9 @@ function App() {
 export default App;
 ```
 
+## Passing parameter 
+- here, to pass `+` symbol when button is clicked:
+`<button onClick={() => handleOnClick("+")}>Increment</button>
 
 ## Hooks
 ### useState
@@ -35,11 +38,14 @@ export default App;
 - function name start with handle
 ```js
 const [variable,setVariable] = useState(0)
+//useState(initialvalue)
 ```
+
 ```js
 import React, { useState, useEffect } from "react";
 const Counter = () => {
   const [value, setValue] = useState(0);
+  /*
   const handleOnIncrement = () => {
     if (value < 100) {
       setValue(value + 1);
@@ -50,13 +56,32 @@ const Counter = () => {
       setValue(value - 1);
     }
   };
+  */
+  const handleOnClick = (opr) => {
+    if (opr === "+") {
+      if (value < 100) {
+        setValue(value + 1);
+        alert("increse");
+      }
+    } else if (opr === "-") {
+      if (value > 0) {
+        setValue(value - 1);
+        alert("decrese");
+      }
+    } else {
+      console.alter("invalid operation");
+    }
+  };
   return (
     <div>
       This is counter <br />
       Value = {value}
       <br />
-      <button onClick={handleOnIncrement}>Increment</button>
-      <button onClick={handleOnDecrement}>Decrement</button>
+      <button onClick={() => handleOnClick("+")}>Increment</button>
+      {/* <button onClick={handleOnIncrement()}>Increment</button> */}
+      {/* <button onClick={handleOnDecrement()}>Decrement</button> */}
+      {/* direct call the function goes to infinite loop*/}
+      <button onClick={() => handleOnClick("-")}>Decrement</button>
     </div>
   );
 };
@@ -109,3 +134,4 @@ const Props = ({ obs }) => {
 }
 export default Props
 ```
+
